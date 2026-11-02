@@ -34,31 +34,57 @@ export default function ClientsTable() {
       phone: '+371 22222222',
     },
     {
-      id: 5,
+      id: 6,
+      name: 'Арнольд Витальевич',
+      email: 'vetalya11@mail.com',
+      phone: '+371 22222222',
+    },
+    {
+      id: 7,
+      name: 'Арнольд Витальевич',
+      email: 'vetalya11@mail.com',
+      phone: '+371 22222222',
+    },
+    {
+      id: 8,
+      name: 'Арнольд Витальевич',
+      email: 'vetalya11@mail.com',
+      phone: '+371 22222222',
+    },
+    {
+      id: 9,
+      name: 'Арнольд Витальевич',
+      email: 'vetalya11@mail.com',
+      phone: '+371 22222222',
+    },
+    {
+      id: 10,
       name: 'Арнольд Витальевич',
       email: 'vetalya11@mail.com',
       phone: '+371 22222222',
     },
   ];
   return (
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead>Имя</TableHead>
-          <TableHead>Email</TableHead>
-          <TableHead>Телефон</TableHead>
-        </TableRow>
-      </TableHeader>
-
-      <TableBody>
-        {clients.map(client => (
-          <TableRow key={client.id}>
-            <TableCell>{client.name}</TableCell>
-            <TableCell>{client.email}</TableCell>
-            <TableCell>{client.phone}</TableCell>
+    <>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Имя</TableHead>
+            <TableHead>Email</TableHead>
+            <TableHead>Телефон</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+
+        <TableBody>
+          {clients.map(client => (
+            <TableRow key={client.id}>
+              <TableCell>{client.name}</TableCell>
+              <TableCell>{client.email}</TableCell>
+              <TableCell>{client.phone}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </>
   );
 }

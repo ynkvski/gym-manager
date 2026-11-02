@@ -1,3 +1,4 @@
+'use client';
 import logo from '@/public/assets/logo.png';
 import {
   CalendarDays,
@@ -10,6 +11,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   Sidebar,
   SidebarContent,
@@ -35,6 +37,8 @@ export default function AppSidebar() {
     { title: 'Настройки', href: '/settings', icon: Settings },
   ];
 
+  const pathname = usePathname();
+
   return (
     <>
       <Sidebar className='pl-4 pt-3 pb-3 rounded-tl-lg rounded-bl-lg '>
@@ -49,11 +53,14 @@ export default function AppSidebar() {
 
               return (
                 <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton>
-                    <Link className='flex items-center gap-2' href={item.href}>
-                      <Icon strokeWidth={2} />
-                      <span>{item.title}</span>
-                    </Link>
+                  <SidebarMenuButton
+                    render={<Link href={item.href} />}
+                    isActive={pathname === item.href}
+                  >
+                    {/* <Link className='flex items-center gap-2' href={item.href}> */}
+                    <Icon strokeWidth={2} />
+                    <span>{item.title}</span>
+                    {/* </Link> */}
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               );

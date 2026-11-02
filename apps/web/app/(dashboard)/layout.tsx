@@ -9,13 +9,15 @@ export default function DashboardLayout({
 }) {
   return (
     <div className='h-dvh w-full overflow-hidden p-3'>
-      <SidebarProvider className='h-full min-h-0'>
+      <SidebarProvider className='h-full  min-h-0 overflow-hidden'>
         <AppSidebar />
 
-        <SidebarInset className='min-h-0 overflow-hidden'>
+        <SidebarInset className='flex h-full min-h-0 min-w-0 flex-col overflow-hidden'>
           <Header />
 
-          <main className='min-h-0 flex-1 overflow-y-auto p-6'>{children}</main>
+          <main className='min-h-0 flex-1 overflow-y-auto overflow-x-hidden p-6'>
+            {children}
+          </main>
         </SidebarInset>
       </SidebarProvider>
     </div>

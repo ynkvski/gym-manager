@@ -34,7 +34,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         roboto.variable,
       )}
     >
-      <body className='min-h-dvh flex items-center justify-center bg-[#0a0a0a]'>
+      <body className='min-h-dvh flex items-center justify-center overflow-hidden bg-[#0a0a0a]'>
         <div className='h-[calc(100dvh-24px)] w-[calc(100vw-100px)]'>
           {children}
         </div>

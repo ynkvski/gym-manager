@@ -26,7 +26,7 @@ export function Header() {
         ' h-[60px] px-5 flex items-center justify-between border-b-2 border-white/10',
       )}
     >
-      <h2 className='text-left text-[clamp(1.6rem,2.5vw,2rem)]  max-[480px]:leading-[0.9] '>
+      <h2 className=' text-left text-[clamp(1.6rem,2.5vw,2rem)]  max-[480px]:leading-[0.9] '>
         {title}
       </h2>
       <div className='flex items-center justify-center gap-2'>
