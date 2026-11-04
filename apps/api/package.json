@@ -2,6 +2,7 @@
   "name": "api",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
@@ -10,6 +11,8 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@gym-manager/db": "workspace:*",
+    "dotenv": "^18.0.9",
     "express": "^5.3.0"
   },
   "devDependencies": {

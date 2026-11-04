@@ -24,12 +24,12 @@ Backend
 - Prisma ORM.
 - Prisma Migrate для миграций.
 Инструменты
-- npm workspaces.
+- pnpm.
 - ESLint.
 - Prettier, если он уже настроен или требуется проекту.
 Не добавляй дополнительные библиотеки без необходимости. Перед установкой существенной зависимости объясни, зачем она нужна.
 3. Архитектура проекта
-Используй npm workspaces monorepo со следующей целевой структурой:
+Используй pnpm workspaces monorepo со следующей целевой структурой:
 gym-manager/
 ├── apps/
 │   ├── web/                 # Next.js frontend
@@ -38,7 +38,7 @@ gym-manager/
 │   └── db/                  # Prisma schema, migrations, client
 ├── AGENTS.md
 ├── package.json
-├── package.json              # workspaces: ["apps/*", "packages/*"]
+├── pnpm-workspace.yaml       # packages: apps/*, packages/*
 ├── .env.example
 ├── .gitignore
 └── README.md
@@ -297,8 +297,8 @@ apps/web/src/app/
 
 Создай .env.example с названиями необходимых переменных и безопасными примерами без реальных секретов.
 
-Используй npm workspaces для управления пакетами монорепозитория. В корневом package.json настрой workspaces для apps/* и packages/*.
-Настрой отдельные npm-скрипты для разработки frontend и backend, а также понятные команды для Prisma и миграций. Не используй pnpm-команды или pnpm-workspace.yaml.
+Используй pnpm workspaces для управления пакетами монорепозитория. Объяви пакеты apps/* и packages/* в pnpm-workspace.yaml.
+Настрой отдельные скрипты для разработки frontend и backend, а также понятные команды для Prisma и миграций. Не используй npm workspaces и package-lock.json.
 
 Документируй:
 - требования к окружению;
