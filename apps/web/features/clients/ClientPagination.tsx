@@ -1,37 +1,55 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
 } from '@/components/ui/pagination';
 
-export default function ClientPagination() {
+type Props = {
+  currentPage: number;
+  totalPages: number;
+};
+
+export default function ClientPagination({ currentPage, totalPages }: Props) {
+  if (totalPages <= 1) return null;
+
   return (
     <div>
       <Pagination>
         <PaginationContent>
           <PaginationItem>
-            <PaginationPrevious href='#' />
+            <PaginationPrevious
+              href={`/clients?page=${currentPage - 1}`}
+              className={
+                currentPage === 1 ? 'pointer-events-none opacity-50' : ''
+              }
+            />
           </PaginationItem>
+          {Array.from({ length: totalPages }, (_, index) => index + 1).map(
+            page => (
+              <PaginationItem key={page}>
+                <PaginationLink
+                  href={`/clients?page=${page}`}
+                  isActive={page === currentPage}
+                  aria-disabled={currentPage === 1}
+                >
+                  {page}
+                </PaginationLink>
+              </PaginationItem>
+            ),
+          )}
           <PaginationItem>
-            <PaginationLink href='#'>1</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href='#' isActive>
-              2
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href='#'>3</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationEllipsis />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationNext href='#' />
+            <PaginationNext
+              href={`/clients?page=${currentPage + 1}`}
+              className={
+                currentPage === totalPages
+                  ? 'pointer-events-none opacity-50'
+                  : ''
+              }
+              aria-disabled={currentPage === totalPages}
+            />
           </PaginationItem>
         </PaginationContent>
       </Pagination>

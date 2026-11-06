@@ -9,7 +9,7 @@ export default function ClientSearch() {
   return (
     <>
       <InputGroup className='max-w-xs'>
-        <InputGroupInput placeholder='Search...' />
+        <InputGroupInput placeholder='Поиск...' />
         <InputGroupAddon>
           <Search />
         </InputGroupAddon>
