@@ -23,7 +23,7 @@ export type PaginatedClients = {
 
 export async function getClients(page = 1): Promise<PaginatedClients> {
   const res = await fetch(
-    `${process.env.API_URL}/api/clients?page=${page}&limit=9`,
+    `${process.env.API_URL}/api/clients?page=${page}&limit=8`,
     {
       cache: 'no-store',
     },

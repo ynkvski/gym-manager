@@ -11,7 +11,7 @@ export default function Home() {
         <SidebarInset className='h-full min-h-0'>
           <Header />
 
-          <main className='min-h-0 flex-1 overflow-y-auto'>
+          <main className='min-h-0 flex-1 overflow-y-auto '>
             {/* Здесь будет контент страницы */}
           </main>
         </SidebarInset>

@@ -19,7 +19,7 @@ import {
 export default async function ClientsSkeleton() {
   return (
     <>
-      <Table>
+      <Table className='table-fixed w-full'>
         <TableHeader>
           <TableRow>
             <TableHead>Имя</TableHead>
@@ -30,7 +30,7 @@ export default async function ClientsSkeleton() {
         </TableHeader>
 
         <TableBody>
-          {Array.from({ length: 9 }, (_, index) => (
+          {Array.from({ length: 8 }, (_, index) => (
             <TableRow key={index}>
               <TableCell>
                 <Skeleton className='h-5 w-32' />

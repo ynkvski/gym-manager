@@ -16,7 +16,7 @@ type Props = {
 export default async function ClientsTable({ clients }: Props) {
   return (
     <>
-      <Table>
+      <Table className='animate-fade-in table-fixed w-full mb-7'>
         <TableHeader>
           <TableRow>
             <TableHead>Имя</TableHead>
