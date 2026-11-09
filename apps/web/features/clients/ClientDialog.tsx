@@ -87,7 +87,11 @@ export default function ClientDialog() {
         open={open}
         onOpenChange={isOpen => {
           if (!isOpen) {
-            setConfirmClose(true);
+            if (form.formState.isDirty) {
+              setConfirmClose(true);
+            } else {
+              setOpen(false);
+            }
             return;
           }
 
@@ -114,12 +118,14 @@ export default function ClientDialog() {
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
-        <DialogTrigger>
-          <span className='inline-flex cursor-pointer items-center gap-2'>
-            <Plus />
-            Добавить
-          </span>
-        </DialogTrigger>
+        <DialogTrigger
+          render={
+            <Button variant='outline' type='button'>
+              <Plus />
+              Добавить
+            </Button>
+          }
+        />
 
         <DialogContent>
           <DialogHeader>
@@ -225,6 +231,7 @@ export default function ClientDialog() {
                         <PopoverTrigger
                           render={
                             <Button
+                              id='bithday'
                               type='button'
                               variant='outline'
                               data-empty={!date}

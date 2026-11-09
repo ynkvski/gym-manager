@@ -6,7 +6,7 @@ export const clientSchema = z.object({
 
   phone: z.string().optional(),
 
-  email: z.string().email('Введите корректный email').or(z.literal('')),
+  email: z.email('Введите корректный email').or(z.literal('')),
 
   birthDate: z.string().optional(),
 
